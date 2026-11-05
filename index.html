@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#0a120b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="Последняя спичка — атмосферная мобильная pixel-art игра. Не позволяй огню погаснуть.">
+<title>Последняя спичка</title>
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="game"></canvas>
+<div id="vignette"></div>
+
+<!-- Игровой HUD -->
+<div id="hud" class="hidden">
+  <div id="hud-top">
+    <div id="status">
+      <div class="bar"><div id="hp-fill"></div><span id="hp-text"></span></div>
+      <div class="bar xp"><div id="xp-fill"></div><span id="level-text"></span></div>
+    </div>
+    <button id="btn-pause" class="hud-btn" aria-label="Пауза">II</button>
+  </div>
+
+  <div id="objective"></div>
+  <div id="toast-wrap"></div>
+  <div id="match-wrap" class="hidden">
+    <div id="match-label"></div>
+    <div class="bar match"><div id="match-fill"></div></div>
+  </div>
+
+  <div id="joy-base" class="hidden"><div id="joy-nub"></div></div>
+
+  <div id="hud-right">
+    <button id="btn-blow" class="hidden" aria-label="Потушить"><img class="ic" alt=""><span>Потушить</span></button>
+    <button id="btn-inv" class="hud-btn big" aria-label="Инвентарь"><img class="ic" alt=""><span id="inv-count"></span></button>
+    <button id="btn-act" class="hidden" aria-label="Действие"><img class="ic" alt=""><span id="act-label"></span></button>
+    <button id="btn-strike" class="hud-btn big" aria-label="Зажечь спичку"><img class="ic" alt=""><span class="strike-count" id="match-count"></span></button>
+  </div>
+</div>
+
+<!-- Экраны меню -->
+<div id="screens"></div>
+<div id="fade"></div>
+
+<input type="file" id="import-file" accept=".json,application/json" hidden>
+
+<script src="game.js"></script>
+</body>
+</html>
